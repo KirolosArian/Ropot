@@ -1044,9 +1044,35 @@ main {
   justify-content: center;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
+/* ==============================================================================
+   RESPONSIVE DESIGN SYSTEM (DESKTOP, TABLET & MOBILE VIEWPORTS)
+   ============================================================================== */
+
+/* Tier Stacking & Blueprints Default Grids */
+.tier-stacking-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  align-items: start;
+}
+.blueprints-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Tablet & Smaller Laptops (<= 1024px) */
+@media (max-width: 1024px) {
   .hero-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  .tier-stacking-grid {
+    grid-template-columns: 1fr;
+  }
+  .blueprints-grid {
     grid-template-columns: 1fr;
   }
   .sim-container {
@@ -1057,5 +1083,202 @@ main {
   }
   .pinout-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Devices & Tablets (<= 768px) */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Compact Mobile Header */
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.6rem 0.8rem;
+    gap: 8px;
+  }
+  .brand {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .brand-title {
+    font-size: 1.1rem;
+  }
+  .brand-tag {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  /* Horizontally Scrollable Touch Tabs (Swipe with Thumb!) */
+  nav.tab-nav {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px;
+    gap: 4px;
+    width: 100%;
+  }
+  nav.tab-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .tab-btn {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 7px 12px;
+  }
+
+  /* Mobile Content Padding */
+  main {
+    padding: 1rem 0.75rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Hero Card on Mobile */
+  .hero-card {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-size: 1.65rem;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+  .hero-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Specifications Grid (2 Columns on Mobile) */
+  .spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 1.2rem;
+  }
+  .spec-box {
+    padding: 8px 10px;
+  }
+  .spec-label {
+    font-size: 0.62rem;
+  }
+  .spec-value {
+    font-size: 0.82rem;
+    word-break: break-word;
+  }
+
+  /* Section Headers */
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 1.2rem;
+  }
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  /* Full Width Responsive Cards Grid */
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+  }
+  .item-card {
+    width: 100%;
+  }
+
+  /* 3D Part Showcase */
+  .part-showcase {
+    margin-bottom: 1.8rem;
+  }
+  .part-showcase-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .part-title {
+    font-size: 1.1rem;
+  }
+  .part-dims {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+  }
+  .part-details-grid {
+    padding: 1.2rem 1rem;
+    gap: 1.2rem;
+  }
+
+  /* Cozmo Face Simulator on Mobile */
+  .sim-screen-card {
+    min-height: 320px;
+    padding: 2.2rem 1rem 1.8rem;
+  }
+  .robot-face {
+    transform: scale(0.85);
+  }
+  .sim-controls-card {
+    padding: 1.2rem 1rem;
+  }
+  .sim-btn-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .sim-btn {
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Pinout Explorer */
+  .pinout-layout {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .pin-list {
+    max-height: 260px;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  .pin-detail-card {
+    padding: 1.2rem 1rem;
+  }
+  .pin-detail-card h2 {
+    font-size: 1.6rem !important;
+  }
+}
+
+/* Extra Small Phones (<= 380px) */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.4rem;
+  }
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+  .robot-face {
+    transform: scale(0.75);
   }
 }
