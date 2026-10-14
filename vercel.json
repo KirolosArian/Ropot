@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/web_manual/index.html" },
+    { "source": "/:path*", "destination": "/web_manual/:path*" }
+  ]
+}

@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudRover V1.0 — Autonomous Micro-Rover Technical Studio & Manual</title>
+  <meta name="description" content="Ultra-detailed technical documentation, 3D CAD blueprints, fastener catalogs, and interactive hardware simulator for CloudRover V1.0.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Studio Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">⚡</div>
+      <div>
+        <div class="brand-title">CLOUDROVER V1.0</div>
+      </div>
+      <span class="brand-tag">HARDWARE v1.0 • FREERTOS</span>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="overview">
+        <span>🚀</span> Overview
+      </button>
+      <button class="tab-btn" data-tab="fasteners">
+        <span>🔩</span> Fasteners & Hardware
+      </button>
+      <button class="tab-btn" data-tab="modules">
+        <span>🔌</span> Electronics BOM
+      </button>
+      <button class="tab-btn" data-tab="3dparts">
+        <span>🧊</span> 3D Parts & Blueprints
+      </button>
+      <button class="tab-btn" data-tab="schematics">
+        <span>📐</span> Schematics & Pinout
+      </button>
+      <button class="tab-btn" data-tab="moodsim">
+        <span>👀</span> Mood Simulator
+      </button>
+      <button class="tab-btn" data-tab="protocol">
+        <span>📋</span> Testing & QA
+      </button>
+    </nav>
+
+    <div class="header-actions">
+      <a href="CloudRover_V1.0_Complete_Build_Guide.pdf" class="btn-primary" target="_blank" download>
+        <span>📥</span> Download Master PDF
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== TAB 1: OVERVIEW & ASSEMBLY ==================== -->
+    <div id="overview" class="tab-pane active">
+      
+      <!-- Hero Section -->
+      <section class="hero-card">
+        <div class="hero-content">
+          <div class="hero-subtitle">AUTONOMOUS CELLULAR IOT RECONNAISSANCE MICRO-ROVER</div>
+          <h1 class="hero-title">Precision Engineering In an 80×80mm Form Factor</h1>
+          <p class="hero-desc">
+            CloudRover V1.0 is an ultra-compact, four-tier tracked robotic platform engineered for all-weather autonomous telemetry, real-time video surveillance over 4G LTE, and expressive human-machine interaction via high-framerate eye animations and synthesized acoustic feedback.
+          </p>
+
+          <div class="spec-grid">
+            <div class="spec-box">
+              <div class="spec-label">Envelope Dimensions</div>
+              <div class="spec-value">80 × 80 × 85 mm</div>
+            </div>
+            <div class="spec-box">
+              <div class="spec-label">Total Mass (w/ Cells)</div>
+              <div class="spec-value">420 grams</div>
+            </div>
+            <div class="spec-box">
+              <div class="spec-label">Battery Capacity</div>
+              <div class="spec-value">6000mAh (2× 18650)</div>
+            </div>
+            <div class="spec-box">
+              <div class="spec-label">Compute Engine</div>
+              <div class="spec-value">Dual ESP32 (240MHz)</div>
+            </div>
+            <div class="spec-box">
+              <div class="spec-label">Communications</div>
+              <div class="spec-value">4G LTE + Wi-Fi AP</div>
+            </div>
+            <div class="spec-box">
+              <div class="spec-label">Power Architecture</div>
+              <div class="spec-value">Dual BMS + Solar</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap">
+          <img src="img/cloudrover_hero.jpg" alt="CloudRover V1.0 Assembled 3D Studio Hero Render" id="heroImg">
+        </div>
+      </section>
+
+      <!-- 4-Tier Mechanical Stacking Explorer -->
+      <section class="section-header">
+        <div class="section-title">
+          <span>🏗️</span> Modular 4-Tier Mechanical Stacking Architecture
+        </div>
+        <span class="section-badge">MODULAR ENCLOSURE</span>
+      </section>
+
+      <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; margin-bottom: 2.5rem; align-items: start;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem;">
+          <img src="img/robot_exploded_cad.jpg" alt="CloudRover 3D CAD Exploded Stacking View" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+          <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+            Figure 1.1: 3D CAD Exploded Rendering detailing vertical tier distribution, modular vibration isolation, and M3 brass standoff channels.
+          </div>
+        </div>
+
+        <div>
+          <div class="item-card" style="margin-bottom: 1.2rem;">
+            <div class="item-card-header">
+              <span class="item-num">TIER 0 : CHASSIS BASE</span>
+              <span class="item-qty">GROUND LEVEL</span>
+            </div>
+            <div class="item-card-body">
+              <div class="item-name">Twin High-Torque N20 Gearmotors & Battery Caster</div>
+              <div class="item-spec">
+                Accommodates twin 6V 300RPM all-metal micro-gearbox motors, continuous rubber tracks, bottom 12mm stainless ball caster for low-friction 3-point balance, and ventilated 1S2P 18650 cell tray.
+              </div>
+            </div>
+          </div>
+
+          <div class="item-card" style="margin-bottom: 1.2rem;">
+            <div class="item-card-header">
+              <span class="item-num">TIER 1 : POWER CORE</span>
+              <span class="item-qty">ISOLATED RAIL</span>
+            </div>
+            <div class="item-card-body">
+              <div class="item-name">TP4056 BMS + LM2596 Buck + L298N Motor Driver</div>
+              <div class="item-spec">
+                Hosts high-current motor drivers and step-down power conversion. Heavy electrolytic filter capacitors (1000µF) absorb inductive kickbacks to eliminate system brownouts.
+              </div>
+            </div>
+          </div>
+
+          <div class="item-card" style="margin-bottom: 1.2rem;">
+            <div class="item-card-header">
+              <span class="item-num">TIER 2 : COMPUTE & RF</span>
+              <span class="item-qty">NOISE-SHIELDED</span>
+            </div>
+            <div class="item-card-body">
+              <div class="item-name">ESP32 DevKit Core + SIM7600E-H 4G LTE Telemetry</div>
+              <div class="item-spec">
+                Dual-core 240MHz master controller handling FreeRTOS tasks, hardware SPI/I2C communication, and cellular telemetry via high-gain ceramic patch antenna.
+              </div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-card-header">
+              <span class="item-num">TIER 3 : SENSORY & SOLAR</span>
+              <span class="item-qty">WEATHER-SEALED</span>
+            </div>
+            <div class="item-card-body">
+              <div class="item-name">Faceplate (TFT + CAM + Laser ToF) & Solar Roof</div>
+              <div class="item-spec">
+                Front bezel featuring ST7735 1.8" TFT mood screen, OV2640 camera, VL53L1X laser rangefinder, MAX9814 AGC mic, capped by a 6V 2W monocrystalline solar panel.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Architecture & Orthographic Blueprint -->
+      <section class="section-header">
+        <div class="section-title">
+          <span>📐</span> Orthographic Engineering Blueprints & Architecture
+        </div>
+        <span class="section-badge">DIMENSIONED SPECS</span>
+      </section>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem;">
+          <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--cyan-primary);">Orthographic Triple-View Blueprint</h3>
+          <img src="img/d1.png" alt="CloudRover Orthographic Blueprint" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+          <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+            Front, top, and profile orthographic projections showing critical clearances, ground elevation (14mm), and track contact patch geometry.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem;">
+          <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--cyan-primary);">Modular Stacking Sectional Diagram</h3>
+          <img src="img/d5_stacking.png" alt="CloudRover Modular Stacking Diagram" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+          <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+            Sectional tier distribution with exact M3 brass standoff heights (6mm and 25mm) ensuring zero electromagnetic interference across power and radio planes.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 2: FASTENERS & HARDWARE ==================== -->
+    <div id="fasteners" class="tab-pane">
+      
+      <section class="section-header">
+        <div class="section-title">
+          <span>🔩</span> Small Hardware, Fasteners & Passive Components Catalog
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <input type="text" id="componentSearch" placeholder="Filter fasteners, screws, caps..." style="background: var(--bg-surface-elevated); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: var(--radius-md); color: #fff; font-size: 0.85rem; outline: none;">
+          <span class="section-badge">15 HARDWARE SKUS</span>
+        </div>
+      </section>
+
+      <!-- Zoomable Visual Catalog Hero Banner -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px;">
+          <span>📸</span> Macro Photographic Hardware Catalog (Fasteners, Stand-offs, Passives, Cables)
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+          High-resolution visual reference of all mechanical screws, nuts, brass hex standoffs, diodes, decoupling caps, pull-up resistors, switches, and silicone hookup wires used in CloudRover V1.0.
+        </p>
+        <img src="img/fasteners_and_hardware.jpg" alt="CloudRover Fasteners and Hardware Catalog" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+      </div>
+
+      <!-- Itemized Hardware Cards -->
+      <div class="cards-grid">
+        
+        <!-- SKU 1 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">FAST-01</span>
+            <span class="item-qty">QTY: 8 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">M3 Brass Hex Standoffs (Male-Female 25mm)</div>
+            <div class="item-spec">Solid brass threaded standoffs used to construct the primary vertical chassis pillars between Tier 0, Tier 1, and Tier 2.</div>
+            <ul class="item-specs-list">
+              <li>Thread Size: M3 × 0.5mm pitch</li>
+              <li>Hex Body Length: 25.0mm | Male Stud: 6.0mm</li>
+              <li>Material: Nickel-plated solid brass</li>
+              <li>Tensile Rating: Grade 4.8 | Non-magnetic</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 2 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">FAST-02</span>
+            <span class="item-qty">QTY: 8 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">M3 Brass Hex Standoffs (Female-Female 6mm)</div>
+            <div class="item-spec">Compact spacer standoffs for elevating the LM2596 buck converter and perfboard ground plane off 3D chassis surfaces.</div>
+            <ul class="item-specs-list">
+              <li>Thread Size: M3 × 0.5mm internal</li>
+              <li>Hex Body Length: 6.0mm (Hex AF: 5.0mm)</li>
+              <li>Function: Thermal clearance and underside soldering isolation</li>
+              <li>Material: Corrosion-resistant brass</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 3 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">FAST-03</span>
+            <span class="item-qty">QTY: 16 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">M3 Stainless Steel Pan-Head Screws (6mm)</div>
+            <div class="item-spec">Standard assembly screws securing 3D printed brackets, PCB corners, and bottom chassis plates to standoffs.</div>
+            <ul class="item-specs-list">
+              <li>Drive Type: Phillips / Cross #2</li>
+              <li>Thread Length: 6.0mm | Head Dia: 5.5mm</li>
+              <li>Material: 304 A2-70 Stainless Steel</li>
+              <li>Torque Rating: 0.6 Nm max into brass</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 4 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">FAST-04</span>
+            <span class="item-qty">QTY: 12 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">M3 Stainless Steel Hex Nuts (DIN 934)</div>
+            <div class="item-spec">Hex nuts locking the male studs of the standoffs beneath the Part 1 Base Tray and securing motor clamps.</div>
+            <ul class="item-specs-list">
+              <li>Thread Size: M3 × 0.5mm</li>
+              <li>Width Across Flats: 5.5mm | Height: 2.4mm</li>
+              <li>Material: A2 Stainless Steel</li>
+              <li>Finish: Natural clean passivated</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 5 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">FAST-05</span>
+            <span class="item-qty">QTY: 8 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">M2.5 Self-Tapping Screws (8mm Pan-Head)</div>
+            <div class="item-spec">Fastens the Part 3 Front Faceplate and ST7735 screen directly into pre-modeled thermoplastic boss holes.</div>
+            <ul class="item-specs-list">
+              <li>Thread Diameter: 2.5mm | Length: 8.0mm</li>
+              <li>Thread Form: Type BT sharp thread for plastic</li>
+              <li>Pilot Hole Spec: 2.1mm drilled / printed</li>
+              <li>Material: Black oxide coated carbon steel</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 6 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">FAST-06</span>
+            <span class="item-qty">QTY: 1 PC</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Stainless Steel Mini Ball Caster Wheel (12mm)</div>
+            <div class="item-spec">Heavy-duty omnidirectional low-friction ball bearing providing stable 3-point kinematic support for tracked chassis.</div>
+            <ul class="item-specs-list">
+              <li>Ball Diameter: 12.0mm hardened chrome steel</li>
+              <li>Flange Diameter: 22.0mm with 2× M3 mount ears</li>
+              <li>Load Capacity: 5.0 kg dynamic</li>
+              <li>Friction Coefficient: &lt; 0.03 on flat surfaces</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 7 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">ELEC-PASS-01</span>
+            <span class="item-qty">QTY: 2 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">1N5819 Schottky Barrier Diodes (1A 40V)</div>
+            <div class="item-spec">Ultra-fast low-drop diodes isolating the solar panel output and TP4056 output to prevent battery reverse-drain.</div>
+            <ul class="item-specs-list">
+              <li>Forward Drop: 0.32V @ 0.5A (DO-41 axial)</li>
+              <li>Peak Repetitive Reverse: 40V</li>
+              <li>Recovery Time: &lt; 10ns</li>
+              <li>Placement: Solar panel anode line &amp; USB bypass</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 8 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">ELEC-PASS-02</span>
+            <span class="item-qty">QTY: 1 PC</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">1000µF 16V Low-ESR Electrolytic Capacitor</div>
+            <div class="item-spec">Primary energy buffer soldered across the 5.00V motor power rail to absorb inductive motor kickbacks and brownouts.</div>
+            <ul class="item-specs-list">
+              <li>Capacitance: 1000µF ±20% | Voltage: 16V DC</li>
+              <li>ESR: &lt; 0.045Ω @ 100kHz | Ripple: 1.4A</li>
+              <li>Dimensions: 10mm dia × 16mm height radial</li>
+              <li>Function: ESP32 brownout prevention during stall</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 9 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">ELEC-PASS-03</span>
+            <span class="item-qty">QTY: 3 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">100nF (0.1µF) 50V Ceramic Decoupling Capacitors</div>
+            <div class="item-spec">High-frequency noise bypass capacitors soldered right at ESP32 3.3V, SIM7600E power pins, and VL53L1X sensor.</div>
+            <ul class="item-specs-list">
+              <li>Capacitance: 0.1µF (Code 104) 50V X7R</li>
+              <li>Lead Pitch: 2.54mm (0.1 inch standard)</li>
+              <li>Function: Shunts high-frequency RF ripple to GND</li>
+              <li>Package: Radial dipped ceramic disc</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 10 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">ELEC-PASS-04</span>
+            <span class="item-qty">QTY: 2 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">10µF 25V Tantalum / Electrolytic Capacitors</div>
+            <div class="item-spec">DC-blocking and high-pass coupling capacitors for the ESP32 DAC1 audio line feeding the PAM8403 amplifier.</div>
+            <ul class="item-specs-list">
+              <li>Capacitance: 10µF ±10% | Voltage: 25V</li>
+              <li>Cut-off Frequency: 15Hz into 1kΩ input impedance</li>
+              <li>Eliminates DC bias (1.65V) from speaker voice coil</li>
+              <li>Prevents amplifier voice coil overheating</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 11 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">ELEC-PASS-05</span>
+            <span class="item-qty">QTY: 4 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">10kΩ 1/4W 1% Metal Film Resistors</div>
+            <div class="item-spec">Used as reliable pull-up resistors for the I2C bus (SDA/SCL) and passive audio attenuation network.</div>
+            <ul class="item-specs-list">
+              <li>Resistance: 10,000 Ohms (Brown-Black-Black-Red-Brown)</li>
+              <li>Tolerance: ±1% precision metal film</li>
+              <li>Power Rating: 250mW (0.25 Watt)</li>
+              <li>Application: I2C line stabilization &amp; boot pin pull-ups</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 12 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">ELEC-PASS-06</span>
+            <span class="item-qty">QTY: 2 PCS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">100kΩ 1/4W 1% Metal Film Resistors</div>
+            <div class="item-spec">Forms a high-impedance 2:1 precision voltage divider to safely measure the 6V solar panel with ESP32 ADC1.</div>
+            <ul class="item-specs-list">
+              <li>Resistance: 100,000 Ohms (Brown-Black-Black-Orange-Brown)</li>
+              <li>Divider Ratio: 0.500 (V_out = V_solar × 0.500)</li>
+              <li>Quiescent Current Drain: &lt; 30µA @ 6V</li>
+              <li>Directly maps 0-6.0V solar panel to 0-3.0V ADC input</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 13 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">ELEC-SW-01</span>
+            <span class="item-qty">QTY: 1 PC</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Miniature SPST Rocker Switch (KCD11 10×15mm)</div>
+            <div class="item-spec">Master system disconnect switch mounted in the rear chassis cutout to isolate the 18650 battery bank.</div>
+            <ul class="item-specs-list">
+              <li>Current Rating: 3A @ 250V AC / 6A @ 12V DC</li>
+              <li>Cutout Size: 10mm × 15mm snap-fit panel mount</li>
+              <li>Contact Resistance: &lt; 50mΩ | Mechanical Life: 50,000 ops</li>
+              <li>Terminals: 2.8mm solder lugs with heat-shrink sleeves</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 14 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">WIRE-01</span>
+            <span class="item-qty">QTY: 1.5 METERS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">24 AWG Flexible High-Temp Silicone Wire (Red/Black)</div>
+            <div class="item-spec">Ultra-flexible multi-strand copper wire carrying high-current motor power and 5.0V bus lines without fatigue.</div>
+            <ul class="item-specs-list">
+              <li>Conductor: 40 strands × 0.08mm tinned copper</li>
+              <li>Insulation: High-temp silicone (-60°C to +200°C)</li>
+              <li>Current Capacity: Up to 5.0A continuous</li>
+              <li>Routing: Battery to switch, switch to LM2596 and L298N</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SKU 15 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">WIRE-02</span>
+            <span class="item-qty">QTY: 40-PIN RIBBON</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Dupont Breadboard Jumper Cables (10cm M-M / M-F / F-F)</div>
+            <div class="item-spec">Pre-crimped 2.54mm Dupont patch jumpers for interconnecting sensors, SPI displays, and UART cellular telemetry.</div>
+            <ul class="item-specs-list">
+              <li>Wire Gauge: 28 AWG multi-color ribbon</li>
+              <li>Pin Pitch: 2.54mm (0.1 inch standard)</li>
+              <li>Length: 100mm (optimized for tight 80mm cube chassis)</li>
+              <li>Connector Housings: 1P Dupont black nylon shell</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 3: ELECTRONICS MODULES BOM ==================== -->
+    <div id="modules" class="tab-pane">
+      
+      <section class="section-header">
+        <div class="section-title">
+          <span>🔌</span> Electronics Modules, Sensor Breakouts & Power Architecture
+        </div>
+        <span class="section-badge">12 CRITICAL MODULES</span>
+      </section>
+
+      <!-- High-Res Modules Hero Banner -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px;">
+          <span>📦</span> Full Electronics Modules Catalog (Dual ESP32, 4G LTE, Sensors, Drivers, BMS)
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+          Clean visual breakdown of all active printed circuit modules, pin headers, and sub-systems powering CloudRover V1.0.
+        </p>
+        <img src="img/electronics_modules_catalog.jpg" alt="CloudRover Electronics Modules Catalog" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+      </div>
+
+      <!-- Itemized Electronic Modules Grid -->
+      <div class="cards-grid">
+        
+        <!-- MOD 1 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-01</span>
+            <span class="item-qty">PRIMARY MCU</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">ESP32-WROOM-32D DevKit V1 (38-Pin)</div>
+            <div class="item-spec">The brain of CloudRover. Dual-core Xtensa 32-bit LX6 running FreeRTOS tasks for real-time sensor fusion and motor PWM.</div>
+            <ul class="item-specs-list">
+              <li>Clock Speed: 240MHz | SRAM: 520KB | Flash: 4MB SPI</li>
+              <li>Peripherals: Hardware SPI (27MHz TFT), I2C, UART2, 2× DAC, 12-bit ADC</li>
+              <li>Operating Voltage: 3.3V Logic | VIN: 5.00V Regulated</li>
+              <li>Mounting: Tier 2 modular socketed perfboard</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 2 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-02</span>
+            <span class="item-qty">STREAMING CAM</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">ESP32-CAM AI-Thinker + CH340 MB USB Shield</div>
+            <div class="item-spec">Dedicated secondary co-processor running an RTSP/MJPEG video streaming server with 2MP OV2640 camera lens.</div>
+            <ul class="item-specs-list">
+              <li>Processor: ESP32-S with 8MB External PSRAM</li>
+              <li>Camera Sensor: 2 Megapixel OV2640 with 68° FOV lens</li>
+              <li>Resolution: Up to SVGA 800×600 @ 25fps</li>
+              <li>Shield: Daughterboard with Micro-USB and CH340 serial chip</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 3 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-03</span>
+            <span class="item-qty">4G TELEMETRY</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Waveshare SIM7600E-H 4G LTE Cat-4 Breakout</div>
+            <div class="item-spec">High-speed global LTE modem providing cloud MQTT telemetry, remote SMS command override, and GPS geolocation.</div>
+            <ul class="item-specs-list">
+              <li>Speed: Cat-4 Downlink 150Mbps / Uplink 50Mbps</li>
+              <li>Bands: LTE-FDD B1/B3/B5/B7/B8/B20 | Quad-band GSM</li>
+              <li>Interface: High-speed UART2 @ 115200 baud (GPIO16/GPIO17)</li>
+              <li>Antennas: Dual SMA (LTE main + active GNSS patch)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 4 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-04</span>
+            <span class="item-qty">MOOD SCREEN</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">ST7735 1.8" 128×160 SPI Full-Color TFT LCD</div>
+            <div class="item-spec">High-framerate IPS display mounted inside the front faceplate bezel to render responsive animated robot eyes.</div>
+            <ul class="item-specs-list">
+              <li>Resolution: 128 × 160 pixels (RGB 65K Colors)</li>
+              <li>Driver IC: Sitronix ST7735S (Hardware SPI Mode 0)</li>
+              <li>Framerate: 45 FPS continuous eye animation loop</li>
+              <li>Operating Voltage: 3.3V Logic &amp; Backlight</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 5 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-05</span>
+            <span class="item-qty">LASER RADAR</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">VL53L1X Time-of-Flight (ToF) Distance Sensor</div>
+            <div class="item-spec">Invisible 940nm Class 1 VCSEL laser distance meter delivering millimeter-accurate obstacle ranging up to 4000mm.</div>
+            <ul class="item-specs-list">
+              <li>Range: 40mm to 4000mm (Immune to target color &amp; reflectance)</li>
+              <li>Field of View: Programmable 15° to 27°</li>
+              <li>Sampling Rate: Up to 50Hz continuous ranging</li>
+              <li>Interface: Fast I2C (0x29) on GPIO21 (SDA) / GPIO22 (SCL)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 6 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-06</span>
+            <span class="item-qty">AUDIO SENSE</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">MAX9814 Electret Microphone w/ Automatic Gain</div>
+            <div class="item-spec">Acoustic sensor with low-noise 20dB/30dB/40dB pre-amp and AGC for detecting audio claps and whistle triggers.</div>
+            <ul class="item-specs-list">
+              <li>Bandwidth: 20Hz – 20kHz acoustic spectrum</li>
+              <li>AGC Action: Compresses loud noise, boosts quiet whispers</li>
+              <li>Output: 2Vpp centered at 1.25V DC bias</li>
+              <li>Connection: Fed into ESP32 ADC1_CH6 (GPIO34)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 7 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-07</span>
+            <span class="item-qty">MOTOR DRIVER</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">L298N Dual Full-Bridge High-Power Motor Driver</div>
+            <div class="item-spec">Robust dual H-bridge driver delivering bidirectional speed and direction control to both N20 continuous tracks.</div>
+            <ul class="item-specs-list">
+              <li>Output Current: 2.0A peak per bridge channel</li>
+              <li>PWM Control: Jumpers removed; driven by GPIO32 &amp; GPIO33</li>
+              <li>Internal Voltage Drop: ~1.8V across bipolar transistors</li>
+              <li>Heatsink: Aluminum fin heatsink bolted to driver frame</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 8 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-08</span>
+            <span class="item-qty">AUDIO OUT</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">PAM8403 3W Class-D Mini Amplifier + 36mm Speaker</div>
+            <div class="item-spec">High-efficiency audio amplifier driving an 8Ω 2W micro speaker for robot chirps, expressive bleeps, and siren alerts.</div>
+            <ul class="item-specs-list">
+              <li>Efficiency: &gt; 90% (Low battery heat dissipation)</li>
+              <li>Output Power: 3.0W into 4Ω / 1.8W into 8Ω @ 5V</li>
+              <li>Filterless Architecture: Lowers component count</li>
+              <li>Audio Input: Fed from ESP32 DAC1 (GPIO25) via 10µF cap</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 9 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-09</span>
+            <span class="item-qty">DUAL BMS</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">TP4056 1A Li-Ion Battery Charger &amp; DW01A Protection</div>
+            <div class="item-spec">Dual charging management with Type-C USB input, overcharge cut-off (4.20V), and deep-discharge protection (2.50V).</div>
+            <ul class="item-specs-list">
+              <li>Charge Method: Constant Current / Constant Voltage (CC/CV)</li>
+              <li>Charge Current: 1000mA (R_prog = 1.2kΩ)</li>
+              <li>Protection ICs: DW01A + FS8205A dual N-channel MOSFET</li>
+              <li>Overcurrent Cut-off: 3.0A emergency trip</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 10 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-10</span>
+            <span class="item-qty">DC-DC BUCK</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">LM2596 High-Efficiency Step-Down DC-DC Converter</div>
+            <div class="item-spec">High-frequency switching regulator stepping down battery voltage to an ultra-stable, rock-solid 5.00V system bus.</div>
+            <ul class="item-specs-list">
+              <li>Input Voltage: 3.5V to 40V DC | Output: 5.00V ±1%</li>
+              <li>Max Continuous Current: 3.0A (Powers MCU, Cam &amp; Servo)</li>
+              <li>Switching Frequency: 150kHz | Efficiency: up to 92%</li>
+              <li>Potentiometer: 25-turn multiturn cermet trimmer</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 11 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-11</span>
+            <span class="item-qty">ENERGY CELL</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">2× 18650 3.7V 3000mAh High-Drain Li-Ion Cells (1S2P)</div>
+            <div class="item-spec">Parallel connected Grade-A lithium cells yielding a massive 6000mAh total capacity for up to 14 hours of continuous operation.</div>
+            <ul class="item-specs-list">
+              <li>Configuration: 1S2P (Nominal 3.7V, Fully Charged 4.2V)</li>
+              <li>Total Energy: 22.2 Watt-hours</li>
+              <li>Continuous Discharge: 20A peak capability</li>
+              <li>Mounting: Base chassis compartment with pure copper contacts</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOD 12 -->
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">MOD-12</span>
+            <span class="item-qty">SOLAR CANOPY</span>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">6V 2W Monocrystalline High-Efficiency Solar Panel</div>
+            <div class="item-spec">Mounted horizontally on the top lid to provide autonomous battery trickle charging and daylight telemetry harvesting.</div>
+            <ul class="item-specs-list">
+              <li>Peak Power: 2.0 Watts (P_max)</li>
+              <li>Open Circuit Voltage (Voc): 7.2V | Vmp: 6.0V</li>
+              <li>Short Circuit Current (Isc): 360mA | Imp: 330mA</li>
+              <li>Dimensions: 75mm × 75mm × 2mm weather-laminated</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 4: 3D PRINTED PARTS & BLUEPRINTS ==================== -->
+    <div id="3dparts" class="tab-pane">
+      
+      <section class="section-header">
+        <div class="section-title">
+          <span>🧊</span> 3D Printed Structural Parts & Engineering CAD Blueprints
+        </div>
+        <span class="section-badge">4 MODULAR PRINTS</span>
+      </section>
+
+      <div style="background: rgba(0, 240, 255, 0.05); border: 1px solid var(--border-focus); border-radius: var(--radius-lg); padding: 1.2rem; margin-bottom: 2rem;">
+        <h4 style="color: var(--cyan-primary); font-size: 1rem; margin-bottom: 0.5rem;">📐 Fabrication & Slicer Golden Rules</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+          All 4 components have been dimensioned with 0.25mm engineering tolerances for standard FDM 3D printers (0.4mm nozzle). Recommended material is <strong>PETG</strong> or <strong>Tough PLA</strong> for high mechanical impact resistance and thermal stability up to 75°C. For Part 4 (Solar Lid), <strong>ASA or PETG</strong> is strictly required for UV resistance.
+        </p>
+      </div>
+
+      <!-- SHOWCASE PART 1 -->
+      <div class="part-showcase">
+        <div class="part-showcase-header">
+          <div class="part-title">PART 1: Tracked Base Chassis &amp; Motor Tray</div>
+          <div class="part-dims">120.0 × 90.0 × 30.0 mm</div>
+        </div>
+        <div class="part-showcase-img">
+          <img src="img/part1_base_tray.jpg" alt="Part 1 Base Tray 3D Render and Dimensioned Blueprint">
+        </div>
+        <div class="part-details-grid">
+          <div>
+            <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Engineering Features &amp; Mechanical Layout</h4>
+            <ul class="part-instruction-list">
+              <li>Twin recessed N20 motor cradles with molded snap-retention ridges and rear cable routing ports.</li>
+              <li>Rear 12mm ball caster socket with 2× M3 threaded brass insert bosses for height adjustment.</li>
+              <li>Central 1S2P 18650 battery bay providing lowest possible Center of Gravity (CoG) to prevent rollover on 35° inclines.</li>
+              <li>Four corner M3 through-holes with counterbore recesses for flush mounting male-female brass pillars.</li>
+              <li>Honeycomb ventilation grilles along bottom tray for passive air cooling across the battery pack.</li>
+            </ul>
+          </div>
+          <div class="slicer-card">
+            <h4>Slicer Print Profile</h4>
+            <table class="slicer-table">
+              <tr><td>Material</td><td>PETG / Tough PLA</td></tr>
+              <tr><td>Layer Height</td><td>0.20 mm</td></tr>
+              <tr><td>Wall Perimeters</td><td>4 Loops (1.6mm)</td></tr>
+              <tr><td>Infill Density</td><td>40% Gyroid</td></tr>
+              <tr><td>Print Temp</td><td>235°C / 75°C Bed</td></tr>
+              <tr><td>Supports</td><td>None (0° Overhangs)</td></tr>
+              <tr><td>Print Time</td><td>~4 hrs 45 mins</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOWCASE PART 2 -->
+      <div class="part-showcase">
+        <div class="part-showcase-header">
+          <div class="part-title">PART 2: Main Equipment Cubic Core Shell</div>
+          <div class="part-dims">80.0 × 80.0 × 85.0 mm</div>
+        </div>
+        <div class="part-showcase-img">
+          <img src="img/part2_cube_body.jpg" alt="Part 2 Main Cubic Core Shell 3D Render and Dimensioned Blueprint">
+        </div>
+        <div class="part-details-grid">
+          <div>
+            <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Engineering Features &amp; Mechanical Layout</h4>
+            <ul class="part-instruction-list">
+              <li>Cubic monocoque body housing Tier 1 (Power &amp; Driver) and Tier 2 (ESP32 Master &amp; Cellular modem).</li>
+              <li>Internal vertical guides for sliding perfboard tiers into position without rattling.</li>
+              <li>Rear panel precision cutouts for KCD11 rocker switch, dual Type-C USB charging ports, and micro-SIM slot.</li>
+              <li>Left and right upper side vents configured with 45° rain-deflection baffles for heat extraction.</li>
+              <li>Corner standoff guide channels with 3.2mm clearance holes extending through all 85mm of body height.</li>
+            </ul>
+          </div>
+          <div class="slicer-card">
+            <h4>Slicer Print Profile</h4>
+            <table class="slicer-table">
+              <tr><td>Material</td><td>PETG / PLA+</td></tr>
+              <tr><td>Layer Height</td><td>0.16 mm</td></tr>
+              <tr><td>Wall Perimeters</td><td>3 Loops (1.2mm)</td></tr>
+              <tr><td>Infill Density</td><td>30% Grid</td></tr>
+              <tr><td>Print Temp</td><td>230°C / 70°C Bed</td></tr>
+              <tr><td>Supports</td><td>Touching Buildplate Only</td></tr>
+              <tr><td>Print Time</td><td>~6 hrs 10 mins</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOWCASE PART 3 -->
+      <div class="part-showcase">
+        <div class="part-showcase-header">
+          <div class="part-title">PART 3: Front Sensory Bezel &amp; Faceplate</div>
+          <div class="part-dims">80.0 × 85.0 × 12.0 mm</div>
+        </div>
+        <div class="part-showcase-img">
+          <img src="img/part3_faceplate.jpg" alt="Part 3 Front Faceplate 3D Render and Dimensioned Blueprint">
+        </div>
+        <div class="part-details-grid">
+          <div>
+            <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Engineering Features &amp; Mechanical Layout</h4>
+            <ul class="part-instruction-list">
+              <li>Beveled screen frame sized for 1.8" ST7735 TFT display (35×28mm viewable window) with backstop rim.</li>
+              <li>Upper central dual-aperture port: Left for OV2640 camera lens (8.5mm dia), Right for VL53L1X laser ToF emitter/detector.</li>
+              <li>Lower left acoustic grille with internal sound collector funnel feeding directly into the MAX9814 AGC microphone.</li>
+              <li>Lower right acoustic radial slots for 36mm PAM8403 speaker output.</li>
+              <li>Four corner M2.5 countersunk screw holes designed for seamless, flush faceplate attachment to Part 2.</li>
+            </ul>
+          </div>
+          <div class="slicer-card">
+            <h4>Slicer Print Profile</h4>
+            <table class="slicer-table">
+              <tr><td>Material</td><td>Tough PLA / PETG</td></tr>
+              <tr><td>Layer Height</td><td>0.12 mm (High Detail)</td></tr>
+              <tr><td>Wall Perimeters</td><td>4 Loops (1.6mm)</td></tr>
+              <tr><td>Infill Density</td><td>50% Triangular</td></tr>
+              <tr><td>Print Temp</td><td>215°C / 60°C Bed</td></tr>
+              <tr><td>Supports</td><td>None (Bridge optimized)</td></tr>
+              <tr><td>Print Time</td><td>~2 hrs 50 mins</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOWCASE PART 4 -->
+      <div class="part-showcase">
+        <div class="part-showcase-header">
+          <div class="part-title">PART 4: Top Solar Canopy &amp; Weather Lid</div>
+          <div class="part-dims">80.0 × 80.0 × 4.5 mm</div>
+        </div>
+        <div class="part-showcase-img">
+          <img src="img/part4_solar_lid.jpg" alt="Part 4 Top Solar Canopy 3D Render and Dimensioned Blueprint">
+        </div>
+        <div class="part-details-grid">
+          <div>
+            <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Engineering Features &amp; Mechanical Layout</h4>
+            <ul class="part-instruction-list">
+              <li>Recessed 76×76×2.2mm top tray for flush mounting the 6V 2W monocrystalline solar panel.</li>
+              <li>Underside perimeter groove designed for 1.5mm silicone O-ring or silicone sealant gasket.</li>
+              <li>Central 4.5mm wire pass-through hole with drip loop geometry preventing rainwater ingress.</li>
+              <li>Four corner M3 countersunk holes aligning perfectly with the vertical brass chassis pillars.</li>
+              <li>Integrated dual SMA antenna mount brackets for 4G LTE cellular blade and active GPS patch.</li>
+            </ul>
+          </div>
+          <div class="slicer-card">
+            <h4>Slicer Print Profile</h4>
+            <table class="slicer-table">
+              <tr><td>Material</td><td>ASA (Strictly UV Stable)</td></tr>
+              <tr><td>Layer Height</td><td>0.20 mm</td></tr>
+              <tr><td>Wall Perimeters</td><td>4 Loops (1.6mm)</td></tr>
+              <tr><td>Infill Density</td><td>100% Solid</td></tr>
+              <tr><td>Print Temp</td><td>250°C / 100°C Bed</td></tr>
+              <tr><td>Supports</td><td>None</td></tr>
+              <tr><td>Print Time</td><td>~1 hr 35 mins</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 5: SCHEMATICS & PINOUT ==================== -->
+    <div id="schematics" class="tab-pane">
+      
+      <section class="section-header">
+        <div class="section-title">
+          <span>📐</span> Electrical Schematics, Power Buses &amp; Pinout Explorer
+        </div>
+        <span class="section-badge">INTERACTIVE PIN INSPECTOR</span>
+      </section>
+
+      <!-- Power Bus Schematic -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px;">
+          <span>⚡</span> Dual-Charging &amp; Regulated Power Distribution Architecture
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+          Schematic detailing 6V Solar panel integration with 1N5819 Schottky diode, TP4056 dual USB-C charging, 1S2P 18650 cell protection, LM2596 5.00V switching buck rail, and 1000µF brownout buffer.
+        </p>
+        <img src="img/d2.png" alt="CloudRover Power Distribution Schematic" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+      </div>
+
+      <!-- Master Wiring & Audio Mixer Schematic -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px;">
+          <span>🔌</span> Master Pin-by-Pin Wiring &amp; Passive Audio Mixer Circuit
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+          Complete interconnect map covering SPI ST7735 display, I2C VL53L1X sensor, UART2 SIM7600E modem, PWM motor driver lines, and the ESP32 DAC1 audio RC filter network.
+        </p>
+        <img src="img/d3.png" alt="CloudRover Master Pin-by-Pin Wiring Schematic" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+      </div>
+
+      <!-- Interactive Pinout Explorer -->
+      <section class="section-header">
+        <div class="section-title">
+          <span>🔍</span> ESP32 Master GPIO Inspector
+        </div>
+        <span class="section-badge">CLICK TO INSPECT PIN FUNCTION</span>
+      </section>
+
+      <div class="pinout-layout">
+        
+        <!-- Pin Selector List -->
+        <div class="pin-list">
+          <div class="pin-item active" data-pin="GPIO 5">
+            <span class="pin-name">GPIO 5</span>
+            <span class="pin-target">ST7735 TFT CS (SPI)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 4">
+            <span class="pin-name">GPIO 4</span>
+            <span class="pin-target">ST7735 TFT RST</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 2">
+            <span class="pin-name">GPIO 2</span>
+            <span class="pin-target">ST7735 TFT DC / A0</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 23">
+            <span class="pin-name">GPIO 23</span>
+            <span class="pin-target">ST7735 TFT MOSI (SPI Data)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 18">
+            <span class="pin-name">GPIO 18</span>
+            <span class="pin-target">ST7735 TFT SCK (SPI Clock)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 21">
+            <span class="pin-name">GPIO 21</span>
+            <span class="pin-target">VL53L1X ToF SDA (I2C)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 22">
+            <span class="pin-name">GPIO 22</span>
+            <span class="pin-target">VL53L1X ToF SCL (I2C)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 16">
+            <span class="pin-name">GPIO 16</span>
+            <span class="pin-target">SIM7600E UART2 RXD</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 17">
+            <span class="pin-name">GPIO 17</span>
+            <span class="pin-target">SIM7600E UART2 TXD</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 12">
+            <span class="pin-name">GPIO 12</span>
+            <span class="pin-target">L298N IN1 (Motor A Dir)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 13">
+            <span class="pin-name">GPIO 13</span>
+            <span class="pin-target">L298N IN2 (Motor A Dir)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 14">
+            <span class="pin-name">GPIO 14</span>
+            <span class="pin-target">L298N IN3 (Motor B Dir)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 27">
+            <span class="pin-name">GPIO 27</span>
+            <span class="pin-target">L298N IN4 (Motor B Dir)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 32">
+            <span class="pin-name">GPIO 32</span>
+            <span class="pin-target">L298N ENA (Left PWM Speed)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 33">
+            <span class="pin-name">GPIO 33</span>
+            <span class="pin-target">L298N ENB (Right PWM Speed)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 34">
+            <span class="pin-name">GPIO 34</span>
+            <span class="pin-target">MAX9814 AGC Mic Out (ADC1)</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 25">
+            <span class="pin-name">GPIO 25</span>
+            <span class="pin-target">Audio Synthesizer DAC1 Out</span>
+          </div>
+          <div class="pin-item" data-pin="GPIO 35">
+            <span class="pin-name">GPIO 35</span>
+            <span class="pin-target">Solar Voltage Sense (ADC1)</span>
+          </div>
+          <div class="pin-item" data-pin="VIN">
+            <span class="pin-name">VIN</span>
+            <span class="pin-target">5.00V System Power Bus</span>
+          </div>
+          <div class="pin-item" data-pin="GND">
+            <span class="pin-name">GND</span>
+            <span class="pin-target">Common Star Ground Point</span>
+          </div>
+        </div>
+
+        <!-- Pin Detail Card -->
+        <div class="pin-detail-card">
+          <div style="font-size: 0.8rem; color: var(--cyan-primary); font-family: var(--font-mono); font-weight: 700; margin-bottom: 0.5rem;" id="pinBus">
+            SPI Hardware Bus
+          </div>
+          <h2 style="font-size: 2.2rem; font-family: var(--font-mono); color: #fff; margin-bottom: 0.5rem;" id="pinTitle">
+            GPIO 5
+          </h2>
+          <div style="font-size: 1.1rem; color: var(--amber-warn); font-weight: 600; margin-bottom: 1.2rem;" id="pinTarget">
+            ST7735 TFT CS
+          </div>
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 10px 14px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.9rem; color: #fff; margin-bottom: 1.5rem;" id="pinVolt">
+            3.3V Logic Level
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;" id="pinDesc">
+            Chip Select line for 1.8" TFT. Active LOW during frame rendering. Driven at high speed by the hardware SPI peripheral.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 6: MOOD & SOUND SIMULATOR ==================== -->
+    <div id="moodsim" class="tab-pane">
+      
+      <section class="section-header">
+        <div class="section-title">
+          <span>👀</span> Interactive Robot Mood &amp; Sound Synthesizer
+        </div>
+        <span class="section-badge">LIVE BROWSER SIMULATOR</span>
+      </section>
+
+      <div class="sim-container">
+        
+        <!-- Live ST7735 Bezel Simulator with Cozmo-Style Face -->
+        <div class="sim-screen-card">
+          <div class="sim-bezel-tag">ST7735 1.8" DISPLAY • COZMO REACTION ENGINE</div>
+          
+          <div class="robot-face face-normal" id="robotFace" title="Click face to tickle & make Cozmo giggle!">
+            <!-- Floating Sleep Zzz -->
+            <div class="sleep-zzz">Zzz...</div>
+
+            <!-- 1. Eyebrows Tier -->
+            <div class="robot-eyebrows">
+              <div class="eyebrow eyebrow-left" id="eyebrowLeft"></div>
+              <div class="eyebrow eyebrow-right" id="eyebrowRight"></div>
+            </div>
+
+            <!-- 2. Eyes Tier -->
+            <div class="robot-eyes" id="robotEyes">
+              <div class="eye eye-left" id="eyeLeft">
+                <div class="eye-glint-main"></div>
+                <div class="eye-glint-sub"></div>
+                <div class="eye-emoji-overlay">❤️</div>
+              </div>
+              <div class="eye eye-right" id="eyeRight">
+                <div class="eye-glint-main"></div>
+                <div class="eye-glint-sub"></div>
+                <div class="eye-emoji-overlay">❤️</div>
+              </div>
+            </div>
+
+            <!-- 3. Blushing Cheeks Tier -->
+            <div class="robot-cheeks" id="robotCheeks">
+              <div class="blush"></div>
+              <div class="blush"></div>
+            </div>
+
+            <!-- 4. Expressive Mouth Tier -->
+            <div class="robot-mouth-wrap">
+              <div class="robot-mouth" id="robotMouth"></div>
+            </div>
+          </div>
+
+          <div style="position: absolute; bottom: 18px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan-primary); letter-spacing: 0.5px;" id="moodStatus">
+            STATUS: NORMAL IDLE (COZMO CURIOUS BLINK LOOP)
+          </div>
+        </div>
+
+        <!-- Controls & Sound Synthesizer -->
+        <div class="sim-controls-card">
+          <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 8px;">
+            <span>🎭</span> Cozmo Emotional State Controller
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+            Click below to trigger cute, expressive reactions with independent animated eyebrows, morphing mouth shapes, and real-time synthesized acoustic tones. You can also <strong>click directly on the robot's face</strong> to tickle him!
+          </p>
+
+          <div class="sim-btn-group">
+            <button class="sim-btn" onclick="setMood('normal')">
+              <span>😐</span> Normal Idle
+            </button>
+            <button class="sim-btn" onclick="setMood('happy')">
+              <span>😊</span> Happy / Giggle
+            </button>
+            <button class="sim-btn" onclick="setMood('love')" style="border-color: rgba(255, 42, 133, 0.4); color: #ff2a85;">
+              <span>😍</span> In Love (Hearts)
+            </button>
+            <button class="sim-btn" onclick="setMood('curious')">
+              <span>🤨</span> Curious (Cozmo Brow)
+            </button>
+            <button class="sim-btn" onclick="setMood('wink')">
+              <span>😉</span> Playful Wink (:3)
+            </button>
+            <button class="sim-btn" onclick="setMood('excited')" style="border-color: rgba(250, 204, 21, 0.4); color: #facc15;">
+              <span>🤩</span> Excited (Fanfare)
+            </button>
+            <button class="sim-btn" onclick="setMood('sad')">
+              <span>🥺</span> Pouting Sad
+            </button>
+            <button class="sim-btn" onclick="setMood('angry')" style="border-color: rgba(255, 69, 0, 0.4); color: #ff4500;">
+              <span>😤</span> Grumpy / Angry
+            </button>
+            <button class="sim-btn" onclick="setMood('sleepy')" style="border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">
+              <span>😴</span> Snoozing (Zzz)
+            </button>
+            <button class="sim-btn" onclick="setMood('shocked')" style="border-color: rgba(239, 68, 68, 0.5); color: #ff0055;">
+              <span>🚨</span> Shocked / Halt
+            </button>
+            <button class="sim-btn" onclick="setMood('solar')" style="grid-column: span 2; border-color: var(--amber-warn); color: var(--amber-warn);">
+              <span>☀️</span> Solar Trickle Charging (Ascending Energy Chime)
+            </button>
+          </div>
+
+          <div style="margin-top: 1.2rem; padding: 12px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+            <div style="font-size: 0.75rem; color: var(--text-subtle); text-transform: uppercase; font-weight: 700; margin-bottom: 4px;">Interactive Expression Chain</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
+              Dual Cozmo Eyebrows (Independently Tilted) ➔ OLED Squircle Eyes with Micro-Glints ➔ Rosy Blushing Cheeks ➔ Animated Morphing Mouth ➔ Web Audio Tone Engine.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FreeRTOS Firmware Tasks Diagram -->
+      <section class="section-header" style="margin-top: 2rem;">
+        <div class="section-title">
+          <span>🧠</span> FreeRTOS Multi-Tasking Architecture
+        </div>
+        <span class="section-badge">CORE 0 &amp; CORE 1</span>
+      </section>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem;">
+        <img src="img/d4_firmware.png" alt="FreeRTOS Multi-Task Architecture Diagram" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+        <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+          Figure 6.1: FreeRTOS task prioritization mapping Core 0 (LTE modem, TCP/IP stack, telemetry queue) and Core 1 (20ms ToF ranging, TFT rendering, motor PID loop).
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 7: PROTOCOL & TESTING ==================== -->
+    <div id="protocol" class="tab-pane">
+      
+      <section class="section-header">
+        <div class="section-title">
+          <span>📋</span> Hardware Commissioning Protocol &amp; Pre-Flight QA
+        </div>
+        <span class="section-badge">8 MANDATORY VALIDATIONS</span>
+      </section>
+
+      <!-- Protocol Flowchart -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px;">
+          <span>📈</span> Step-by-Step Commissioning Workflow
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+          Mandatory sequential electrical and firmware validation gates preventing component damage during initial power-up.
+        </p>
+        <img src="img/d6_testing.png" alt="CloudRover Hardware Commissioning Flowchart" style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: block;">
+      </div>
+
+      <!-- Progress Tracker Bar -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+          <h3 style="font-size: 1.1rem; color: #fff;">Pre-Flight Quality Assurance Sign-Off</h3>
+          <span style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--green-pass); font-weight: 700;" id="commProgressText">
+            0% Complete (0/8 Tests Passed)
+          </span>
+        </div>
+        <div style="width: 100%; height: 10px; background: var(--bg-surface); border-radius: 5px; overflow: hidden; border: 1px solid var(--border-color);">
+          <div id="commProgress" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--cyan-primary), var(--green-pass)); transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+
+      <!-- Checkable Test Cards -->
+      <div class="cards-grid">
+        
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">GATE 01</span>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--green-pass); font-size: 0.85rem; font-weight: 700;">
+              <input type="checkbox" class="comm-check"> PASS
+            </label>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Visual &amp; Star-Ground Cold Continuity Test</div>
+            <div class="item-spec">Power completely DISCONNECTED. Multimeter in continuity mode. Verify 0.00Ω between all subsystem ground pins and star GND perfboard node. Confirm no solder bridges across 5V and GND.</div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">GATE 02</span>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--green-pass); font-size: 0.85rem; font-weight: 700;">
+              <input type="checkbox" class="comm-check"> PASS
+            </label>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Unloaded LM2596 Output Trimmer Adjustment</div>
+            <div class="item-spec">Connect 18650 battery bank. Flip rocker switch ON with ESP32 removed. Measure LM2596 output voltage. Carefully turn multiturn potentiometer until DMM reads exactly 5.00V ±0.03V DC.</div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">GATE 03</span>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--green-pass); font-size: 0.85rem; font-weight: 700;">
+              <input type="checkbox" class="comm-check"> PASS
+            </label>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Transient Load &amp; Brownout Protection Verification</div>
+            <div class="item-spec">Connect 1000µF capacitor to 5V rail. Apply a 1.5A transient dummy load. Monitor 5V rail on oscilloscope or DMM min-hold. Confirm voltage dips no lower than 4.75V during motor startup pulse.</div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">GATE 04</span>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--green-pass); font-size: 0.85rem; font-weight: 700;">
+              <input type="checkbox" class="comm-check"> PASS
+            </label>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Master ESP32 Firmware Flash &amp; Serial Telemetry</div>
+            <div class="item-spec">Plug USB-C cable into ESP32 DevKit. Upload <code>cloudrover_master.ino</code> at 921600 baud. Verify serial monitor output displays CPU frequency 240MHz, FreeRTOS queue created, and heap &gt; 210KB.</div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">GATE 05</span>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--green-pass); font-size: 0.85rem; font-weight: 700;">
+              <input type="checkbox" class="comm-check"> PASS
+            </label>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">I2C Bus Addressing &amp; VL53L1X Calibration</div>
+            <div class="item-spec">Run I2C scanner routine on GPIO21/GPIO22. Confirm device acknowledged at 0x29 (VL53L1X). Place target at 100mm, 500mm, and 1000mm. Confirm readings accurate to ±2mm.</div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">GATE 06</span>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--green-pass); font-size: 0.85rem; font-weight: 700;">
+              <input type="checkbox" class="comm-check"> PASS
+            </label>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">ST7735 SPI Display &amp; Eye Animation Framerate</div>
+            <div class="item-spec">Initialize TFT at 27MHz SPI clock. Trigger idle animation loop. Verify smooth 45 FPS eye blinking without visual tearing, artifact glitches, or back-buffer corruption.</div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">GATE 07</span>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--green-pass); font-size: 0.85rem; font-weight: 700;">
+              <input type="checkbox" class="comm-check"> PASS
+            </label>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">Dual H-Bridge Motor Rotation &amp; Emergency Halt</div>
+            <div class="item-spec">Drive tracks forward at 50% PWM duty cycle. Verify both tracks spin in correct forward orientation. Place hand 120mm in front of faceplate. Confirm VL53L1X triggers immediate motor brake within 20ms.</div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-header">
+            <span class="item-num">GATE 08</span>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--green-pass); font-size: 0.85rem; font-weight: 700;">
+              <input type="checkbox" class="comm-check"> PASS
+            </label>
+          </div>
+          <div class="item-card-body">
+            <div class="item-name">SIM7600E-H Cellular Network Registration &amp; GPS</div>
+            <div class="item-spec">Send <code>AT+CSQ</code> (Signal strength &gt; 15). Confirm <code>AT+CREG?</code> returns registered (0,1 or 0,5). Transmit test HTTP POST payload to cloud server. Confirm server ACK received within 1500ms.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
